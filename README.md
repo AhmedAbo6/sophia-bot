@@ -1,4 +1,7 @@
-# Flask boilerplate facebook messenger bot
+# Sophia Bot
+
+A copy of `Flask boilerplate facebook messenger bot`, which you can find at https://github.com/gmolveau/flask-messenger-bot.
+The original license can be found at `/GMOLVEAU_LICENSE`.
 
 ```bash
 git clone https://github.com/gmolveau/flask-messenger-bot

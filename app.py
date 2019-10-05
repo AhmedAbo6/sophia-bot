@@ -1,5 +1,12 @@
 from flask import Flask, request, Response
-import requests, json, random, os
+import requests
+import json
+import os
+import re
+
+from dict import REPLIES, DICTIONARY
+from utils import parse_reply
+
 app = Flask(__name__)
 
 # env_variables
@@ -47,7 +54,14 @@ def webhook_dev():
 
 def handle_message(user_id, user_message):
     # DO SOMETHING with the user_message ... ¯\_(ツ)_/¯
-    return "Hello "+user_id+" ! You just sent me : " + user_message
+    for regex in DICTIONARY:
+        if re.search(regex, user_message, re.I):
+            temp = DICTIONARY[regex].split('.')
+            assert len(temp) == 2, "Cannot have more than two parts of the key of the REPLIES index."
+            lang, reply = temp
+
+            return parse_reply(REPLIES[lang][reply], uid=user_id, message=user_message)
+    return "Hello "+user_id+", I did not understand your input of: " + user_message
 
 @app.route('/privacy', methods=['GET'])
 def privacy():
