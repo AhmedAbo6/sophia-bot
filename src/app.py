@@ -9,7 +9,7 @@ from utils import parse_reply
 
 app = Flask(__name__)
 
-app.static_folder('public')
+app.static_folder = '../public'
 
 # env_variables
 # token to verify that this bot is legit
