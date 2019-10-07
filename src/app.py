@@ -4,8 +4,8 @@ import json
 import os
 import re
 
-from dict import REPLIES, DICTIONARY
-from utils import parse_reply
+from src.dict import REPLIES, DICTIONARY
+from src.utils import parse_reply
 
 app = Flask(__name__)
 
