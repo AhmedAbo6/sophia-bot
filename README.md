@@ -1,25 +1,34 @@
 # Sophia Bot
 
-A copy of `Flask boilerplate facebook messenger bot`, which you can find at https://github.com/gmolveau/flask-messenger-bot.
+A copy of `Flask boilerplate facebook messenger bot`,
+which you can find at https://github.com/gmolveau/flask-messenger-bot.
 The original license can be found at `/GMOLVEAU_LICENSE`.
 
 ```bash
-git clone https://github.com/gmolveau/flask-messenger-bot
-cd flask-messenger-bot
+# on unix
+git clone https://github.com/AhmedAbo6/sophia-bot
+cd sophia-bot
 virtualenv venv -p python3
 source venv/bin/activate
 pip3 install -r requirements.txt
-
-# on unix
 gunicorn app:app
 
 # on windows
+git clone https://github.com/AhmedAbo6/sophia-bot
+cd sophia-bot
+virtualenv venv -p python3
+./venv/Scripts/activate
+pip3 install -r requirements.txt
 python3 app.py
 ```
 
+If you get an error related to python3 on windows,
+consider putting python3 in your path, or switching
+python3 with just python.
+
 test your dev webhook with
 ```bash
-# unix
+# unix and windows
 pip3 install httpie
 
 # osx

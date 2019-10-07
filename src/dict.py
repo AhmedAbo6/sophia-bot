@@ -13,4 +13,3 @@ DICTIONARY = {
     r'hey(\W|$).*': 'en.greetings',
     r'مرحبا(\W|$).*': 'ar.greetings',
 }
-
