@@ -75,13 +75,23 @@ def handle_message(user_id, user_message):
 @app.route('/privacy', methods=['GET'])
 def privacy():
     # needed route if you need to make your bot public
-    return "This facebook messenger bot's only purpose is to [...]. That's all. We don't use it in any other way."
+    return """This bot's intended purpose is to help you study,
+              and to do so, we need to integrate the data you provide us.
+              We don't use your data in any other way. We use the text you
+              type in chat to our bot to help improve our product. This text
+              is sometimes subject to human review, so please do not type
+              anything sensitive to the chat bot."""
 
 
 @app.route('/user_agreement', methods=['GET'])
 def user_agreement():
     # needed route if you need to make your bot public
-    return "You agree that if you use this software [...] happens."
+    return """You agree that if you use this software, you give us
+              permission to use your data for our intended purposes.
+              You also agree that you may not hold us liable for any
+              personal inconvenience or harm that you may come to through
+              the use of our service. We provide this service as-is, and
+              it is your personal choice whether or not to use it."""
 
 
 @app.route('/', methods=['GET'])
